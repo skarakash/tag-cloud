@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
-class Home extends Component {
-    render() {
+ const Home = ({tags}) =>  {
         return (
             <ul>
                 {
-                    this.props.tags.map(tag => {
+                    tags.map(tag => {
                         return (
                             <li key={tag.id} style={{'fontSize': `${tag.sentimentScore}px`}}>
                                 < Link to={`/${tag.id}`}>{tag.label}</Link>
@@ -16,7 +15,6 @@ class Home extends Component {
                 }
             </ul>
         )
-    }
 }
 
 
